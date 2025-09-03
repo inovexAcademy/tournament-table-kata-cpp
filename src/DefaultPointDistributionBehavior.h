@@ -10,6 +10,7 @@ public:
       const std::shared_ptr<ITableEntry> &homeTeamTableEntry,
       const std::shared_ptr<ITableEntry> &awayTeamTableEntry,
       const GameResult &gameResult) = 0;
+  virtual ~IPointDistributionBehavior() = default;
 };
 
 class DefaultPointDistributionBehavior : public IPointDistributionBehavior

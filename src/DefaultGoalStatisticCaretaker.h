@@ -8,6 +8,7 @@ public:
   virtual void
   maintainGoalStatistic(const std::shared_ptr<ITableEntry> &tableEntry,
                         int scoredGoals, int takenGoals) = 0;
+  virtual ~IGoalStatisticCaretaker() = default;
 };
 
 class DefaultGoalStatisticCaretaker : public IGoalStatisticCaretaker

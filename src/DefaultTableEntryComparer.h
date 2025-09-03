@@ -8,6 +8,7 @@ class ITableEntryComparer
 public:
   virtual bool greaterThan(const ITableEntry &leftTableEntry,
                            const ITableEntry &rightTableEntry) const = 0;
+  virtual ~ITableEntryComparer() = default;
 };
 
 class DefaultTableEntryComparer : public ITableEntryComparer
@@ -17,10 +18,10 @@ private:
   int CalculateGoalDifference(const ITableEntry &tableEntry) const;
 
 public:
-  DefaultTableEntryComparer(){};
+  DefaultTableEntryComparer() {};
   DefaultTableEntryComparer(
       const std::shared_ptr<ICoefficientClient> _coefficientClient)
-      : coefficientClient(_coefficientClient){};
+      : coefficientClient(_coefficientClient) {};
   bool greaterThan(const ITableEntry &leftTableEntry,
                    const ITableEntry &rightTableEntry) const;
 };
